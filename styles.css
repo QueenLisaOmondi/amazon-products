@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: space-between;
+  width: 90%; /* Ensure some space on both sides of the container */
+  max-width: 1200px;
+  margin: 20px auto; /* Center the container horizontally */
+}
+
+.image-side, .description-side, .bsplit {
+  flex: 1; /* Each section will take up equal width */
+  padding: 20px;
+}
+
+.image-side img, .bsplit img {
+  max-width: 100%; /* Ensure the images scale correctly */
+  height: auto;
+}
+
+.description-side {
+  max-width: 600px; /* Limit the width of the description section for readability */
+  text-align: left;
+}
+
+.bsplit {
+  display: flex;
+  flex-direction: column;
+}
+
+.asplit {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.split, .split1 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.split img, .split1 img {
+  width: 150px;
+  height: auto;
+}
+
+.split2 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.split2 button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Media Queries to handle smaller screen sizes */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-side, .description-side, .bsplit {
+    flex: 100%; /* Take full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .split img, .split1 img {
+    width: 100px; /* Reduce image size for smaller screens */
+  }
+}
